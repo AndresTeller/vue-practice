@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import { Button } from "@/components/ui/button";
+import LoginCard from "./components/LoginCard.vue";
 </script>
 
 <template>
-  <Button>Click me</Button>
+  <div>
+    <LoginCard />
+  </div>
 </template>
+
+<style scoped></style>

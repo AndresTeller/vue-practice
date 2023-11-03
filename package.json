@@ -9,12 +9,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vee-validate/zod": "^4.11.8",
+    "@vueuse/core": "^10.5.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "lucide-vue-next": "^0.292.0",
+    "notyf": "^3.10.0",
+    "radix-vue": "^1.1.1",
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7",
-    "vue": "^3.3.4"
+    "vee-validate": "^4.11.8",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20.8.10",
