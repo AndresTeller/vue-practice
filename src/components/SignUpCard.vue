@@ -7,7 +7,6 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { toTypedSchema } from "@vee-validate/zod";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
   FormControl,
   FormField,
@@ -21,7 +20,6 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
@@ -120,7 +118,7 @@ const onSubmit = form.handleSubmit(
         </FormItem>
       </FormField>
 
-      <FormField v-slot="{ componentField }" name="email">
+      <FormField v-slot="{ componentField }" name="role">
         <FormItem>
           <FormLabel>Role</FormLabel>
 
