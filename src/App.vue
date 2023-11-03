@@ -1,13 +1,10 @@
-<script setup lang="ts">
-import LoginCard from "./components/LoginCard.vue";
-import SignUpCard from "./components/SignUpCard.vue";
+<script lang="ts" setup>
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div>
-    <LoginCard />
-    <SignUpCard />
-  </div>
+  
+  <main class="flex justify-center items-center w-screen h-screen">
+    <RouterView />
+  </main>
 </template>
-
-<style scoped></style>

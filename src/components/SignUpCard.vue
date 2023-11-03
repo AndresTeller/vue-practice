@@ -40,7 +40,6 @@ const formSchema = toTypedSchema(
     }),
     password: z.string().min(5),
     confirmPassword: z.string().min(5),
-    isConfirmedTermsAndConditions: z.boolean(),
   })
 );
 
@@ -171,35 +170,9 @@ const onSubmit = form.handleSubmit(
           <FormMessage />
         </FormItem>
       </FormField>
-
-      <FormField
-        v-slot="{ value, handleChange }"
-        name="isConfirmedTermsAndConditions"
-      >
-        <FormItem
-          class="flex flex-row items-start gap-x-3 space-y-0 rounded-md p-4"
-        >
-          <FormControl>
-            <Checkbox :checked="value" @update:checked="handleChange" />
-          </FormControl>
-          <div class="space-y-1 leading-none">
-            <FormLabel>Accept Terms and Conditions</FormLabel>
-            <FormMessage />
-          </div>
-        </FormItem>
-      </FormField>
-
       <Button type="submit" class="w-full" :disabled="isLoading">
         Create an account
       </Button>
     </form>
-    <p>
-      Already have an account?
-      <router-link
-        :to="{ name: 'Login' }"
-        class="text-blue-800 hover:text-blue-800/75"
-        >Login here</router-link
-      >
-    </p>
   </Card>
 </template>
