@@ -16,6 +16,15 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { ref } from "vue";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const notyf = new Notyf();
 const router = useRouter();
@@ -26,6 +35,9 @@ const formSchema = toTypedSchema(
     name: z.string().min(3).max(20),
     lastname: z.string().min(3).max(20),
     email: z.string().email(),
+    role: z.string({
+      required_error: "Please select a role to display",
+    }),
     password: z.string().min(5),
     confirmPassword: z.string().min(5),
     isConfirmedTermsAndConditions: z.boolean(),
@@ -105,6 +117,27 @@ const onSubmit = form.handleSubmit(
               v-bind="componentField"
             />
           </FormControl>
+          <FormMessage />
+        </FormItem>
+      </FormField>
+
+      <FormField v-slot="{ componentField }" name="email">
+        <FormItem>
+          <FormLabel>Role</FormLabel>
+
+          <Select v-bind="componentField">
+            <FormControl>
+              <SelectTrigger>
+                <SelectValue placeholder="Select a role" />
+              </SelectTrigger>
+            </FormControl>
+            <SelectContent>
+              <SelectGroup>
+                <SelectItem value="ADMIN"> Admin </SelectItem>
+                <SelectItem value="CLIENT"> Client </SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
           <FormMessage />
         </FormItem>
       </FormField>
