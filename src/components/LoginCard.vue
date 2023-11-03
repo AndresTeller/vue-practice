@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { toTypedSchema } from "@vee-validate/zod";
 import * as z from "zod";
@@ -82,40 +81,10 @@ const onSubmit = form.handleSubmit(async ({ email, password }) => {
           <FormMessage />
         </FormItem>
       </FormField>
-
-      <FormField v-slot="{ value, handleChange }" name="rememberMe">
-        <FormItem
-          class="flex flex-row items-start gap-x-3 space-y-0 rounded-md p-4"
-        >
-          <FormControl>
-            <Checkbox :checked="value" @update:checked="handleChange" />
-          </FormControl>
-          <div
-            class="w-full flex items-center justify-between space-y-1 leading-none"
-          >
-            <FormLabel>Remember me</FormLabel>
-            <router-link
-              :to="{ name: 'Root' }"
-              class="text-blue-800 hover:text-blue-800/75"
-            >
-              Forgot password?
-            </router-link>
-            <FormMessage />
-          </div>
-        </FormItem>
-      </FormField>
-
       <Button type="submit" class="w-full" :disabled="isLoading">
         Submit
       </Button>
     </form>
-    <p>
-      Don't have an account yet?
-      <router-link
-        :to="{ name: 'SignUp' }"
-        class="text-blue-800 hover:text-blue-800/75"
-        >Sign up</router-link
-      >
-    </p>
+    <p>Don't have an account yet?</p>
   </Card>
 </template>
